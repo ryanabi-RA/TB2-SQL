@@ -1,0 +1,77 @@
+Create Table Nilai
+(
+nim_mahasiswa number(11) Not Null,
+nama varchar(40) Not Null,
+nama_mata_kuliah varchar(30) Not Null,
+kd_dosen number(8)Not Null,
+nilai_tugas number(3) Not Null,
+nilai_uts number(3) Not Null,
+nilai_uas number(3) Not Null,
+nilai_akhir number(3) Not Null,
+PRIMARY KEY(nim_mahasiswa)
+);
+
+Insert into Nilai (nim_mahasiswa, nama, nama_mata_kuliah, kd_dosen, nilai_tugas, nilai_uts, nilai_uas, nilai_akhir) values (41520010001, 'Ahmad Baedhawi', 'PL/SQL', 01, 87, 85, 91, 88);
+Insert into Nilai (nim_mahasiswa, nama, nama_mata_kuliah, kd_dosen, nilai_tugas, nilai_uts, nilai_uas, nilai_akhir) values (41520010019, 'Ryan Abi Nugraha', 'PL/SQL', 02, 93, 83, 81, 97);
+Insert into Nilai (nim_mahasiswa, nama, nama_mata_kuliah, kd_dosen, nilai_tugas, nilai_uts, nilai_uas, nilai_akhir) values (41520010014, 'Surya Hardiantara Putra', 'PL/SQL', 03, 86, 89, 94, 89);
+
+
+Create Table Dosen
+(
+kd_dosen number(8)Not Null,
+nama_dosen varchar(40) Not Null,
+alamat varchar(50) Not Null,
+email Varchar(30) Not Null,
+Fakultas varchar2(50) Not Null,
+PRIMARY KEY(kd_dosen)
+);
+
+Insert into Dosen (kd_dosen, nama_dosen, alamat, email,fakultas) values (01, 'Muhaimin Hasanudin,S.T,M.Kom', 'Jl mercu', 'muhaimin@gmail.com', 'Ilmu Komputer');
+Insert into Dosen (kd_dosen, nama_dosen, alamat, email,fakultas) values (02, 'Ryan Doctor,S.T,M.Kom', 'Jl mercu', 'ryandoctor@gmail.com', 'Ilmu Komputer'); 
+Insert into Dosen (kd_dosen, nama_dosen, alamat, email,fakultas) values (03, 'Ryan Santoso,S.T,M.Kom', 'Jl mercu', 'ryanSantoso@gmail.com', 'Ilmu Komputer'); 
+
+
+Create Table Mata_Kuliah
+(
+kd_mata_kuliah number(8) Not Null,
+kd_dosen number(8)Not Null,
+nama_mata_kuliah varchar(50) Not Null,
+hari_mata_kuliah Varchar(10) Not Null,
+jam_mata_kuliah Varchar(10) Not Null,
+prodi varchar(50) Not Null,
+fakultas varchar(50) Not Null,
+PRIMARY KEY(kd_mata_kuliah)
+);
+
+Insert into Mata_Kuliah (kd_mata_kuliah,  kd_dosen, nama_mata_kuliah, hari_mata_kuliah, jam_mata_kuliah, prodi, fakultas) values (10, 01, 'SQL', 'Rabu', '13:15', 'IT', 'Ilmu Komputer');
+Insert into Mata_Kuliah (kd_mata_kuliah,  kd_dosen, nama_mata_kuliah, hari_mata_kuliah, jam_mata_kuliah, prodi, fakultas) values (20, 02, 'ALjabar', 'Kamis', '13:15', 'IT', 'Ilmu Komputer');
+Insert into Mata_Kuliah (kd_mata_kuliah,  kd_dosen, nama_mata_kuliah, hari_mata_kuliah, jam_mata_kuliah, prodi, fakultas) values (30, 03, 'KWH', 'Jumat', '13:15', 'IT', 'Ilmu Komputer');
+
+Create Table Mahasiswa
+(
+nim number(11) Not Null,
+nama_mahasiswa varchar(40) Not Null,
+gender varchar(1) Not Null,
+alamat varchar(50) Not Null,
+email varchar(40) Not Null,
+prodi varchar(50) Not Null,
+fakultas varchar(50) Not Null,
+PRIMARY KEY(nim)
+);
+
+Insert into Mahasiswa (nim, nama_mahasiswa, gender, alamat, email, prodi, fakultas) values (41520010001, 'Ahmad Baedhawi', 'L', 'Jl Kasih Sayang', 'ahmad@gmail.com', 'IT', 'Ilmu Komputer');
+Insert into Mahasiswa (nim, nama_mahasiswa, gender, alamat, email, prodi, fakultas) values (41520010019, 'Ryan Abi Nugraha', 'L', 'Jl Mantan', 'ryan1@gmail.com', 'IT', 'Ilmu Komputer');
+Insert into Mahasiswa (nim, nama_mahasiswa, gender, alamat, email, prodi, fakultas) values (41520010014, 'Surya Hardiantara Putra', 'L', 'Jl Kenangan', 'surya@gmail.com', 'IT', 'Ilmu Komputer');
+
+Create Table Kelas
+(
+data_nim number(11) Not Null,
+kd_kelas varchar(8) Not Null,
+kd_dosen number(8)Not Null,
+kd_mata_kuliah number(6) Not Null,
+PRIMARY KEY(kd_kelas)
+);
+
+Insert into Kelas (data_nim, kd_kelas, kd_dosen, kd_mata_kuliah) values (41520010001, '6', 01, 10);
+Insert into Kelas (data_nim, kd_kelas, kd_dosen, kd_mata_kuliah) values (41520010019, '7', 02, 20);
+Insert into Kelas (data_nim, kd_kelas, kd_dosen, kd_mata_kuliah) values (41520010001, '8', 03, 30);
