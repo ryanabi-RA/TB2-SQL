@@ -75,3 +75,25 @@ PRIMARY KEY(kd_kelas)
 Insert into Kelas (data_nim, kd_kelas, kd_dosen, kd_mata_kuliah) values (41520010001, '6', 01, 10);
 Insert into Kelas (data_nim, kd_kelas, kd_dosen, kd_mata_kuliah) values (41520010019, '7', 02, 20);
 Insert into Kelas (data_nim, kd_kelas, kd_dosen, kd_mata_kuliah) values (41520010001, '8', 03, 30);
+
+SELECT
+  Mahasiswa.nim,
+  Mahasiswa.nama_mahasiswa,
+  kelas.kd_kelas,
+  Dosen.kd_dosen,
+  Dosen.nama_dosen,
+  Mata_Kuliah.kd_mata_kuliah,
+  Mata_Kuliah.nama_mata_kuliah,
+  Nilai.nilai_tugas,
+  Nilai.nilai_uts,
+  Nilai.nilai_uas,
+  Nilai.nilai_akhir
+FROM Mahasiswa 
+INNER JOIN kelas 
+  on Mahasiswa.nim = kelas.data_nim
+INNER JOIN dosen 
+  ON Dosen.kd_dosen = kelas.kd_dosen
+INNER JOIN Mata_Kuliah 
+  ON Mata_Kuliah.kd_mata_kuliah = kelas.kd_mata_kuliah
+INNER JOIN nilai 
+  on nilai.nim_mahasiswa = Mahasiswa.nim;
