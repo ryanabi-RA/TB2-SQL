@@ -31,6 +31,9 @@ Insert into Dosen (kd_dosen, nama_dosen, alamat, email,fakultas) values (02, 'Ry
 Insert into Dosen (kd_dosen, nama_dosen, alamat, email,fakultas) values (03, 'Ryan Santoso,S.T,M.Kom', 'Jl mercu', 'ryanSantoso@gmail.com', 'Ilmu Komputer'); 
 
 
+
+
+
 Create Table Mata_Kuliah
 (
 kd_mata_kuliah number(8) Not Null,
@@ -76,6 +79,7 @@ Insert into Kelas (data_nim, kd_kelas, kd_dosen, kd_mata_kuliah) values (4152001
 Insert into Kelas (data_nim, kd_kelas, kd_dosen, kd_mata_kuliah) values (41520010019, '7', 02, 20);
 Insert into Kelas (data_nim, kd_kelas, kd_dosen, kd_mata_kuliah) values (41520010001, '8', 03, 30);
 
+--join tabel
 SELECT
   Mahasiswa.nim,
   Mahasiswa.nama_mahasiswa,
@@ -97,3 +101,71 @@ INNER JOIN Mata_Kuliah
   ON Mata_Kuliah.kd_mata_kuliah = kelas.kd_mata_kuliah
 INNER JOIN nilai 
   on nilai.nim_mahasiswa = Mahasiswa.nim;
+
+--view tabel
+CREATE VIEW Jadwal_kuliah AS
+SELECT
+  mhs.nama_mahasiswa,
+  mk.kd_mata_kuliah,
+  mk.nama_Mata_kuliah,
+  mk.hari_mata_kuliah,
+  mk.jam_mata_kuliah,
+  kls.kd_kelas,
+  d.nama_Dosen,
+  mhs.prodi
+FROM 
+  Mahasiswa mhs,
+  Kelas kls,
+  Dosen d,
+  Mata_Kuliah mk
+WHERE mhs.nim=kls.data_nim
+and d.kd_dosen=kls.kd_dosen
+and mk.kd_mata_kuliah=kls.kd_mata_kuliah;
+
+SELECT * FROM Jadwal_kuliah;
+
+CREATE VIEW absensi AS
+SELECT
+  mhs.nim,
+  mhs.nama_mahasiswa,
+  mk.kd_mata_kuliah,
+  mk.nama_Mata_kuliah,
+  kls.kd_kelas,
+  d.nama_Dosen,
+  mhs.prodi
+FROM 
+  Mahasiswa mhs,
+  Kelas kls,
+  Dosen d,
+  Mata_Kuliah mk
+WHERE mhs.nim=kls.data_nim
+and d.kd_dosen=kls.kd_dosen
+and mk.kd_mata_kuliah=kls.kd_mata_kuliah;
+
+SELECT * FROM absensi;
+
+--trigger
+Create Table log_mahasiswa(
+  nim number(11) Not Null,
+  nama_mahasiswa varchar(40) Not Null,
+  alamat varchar(50) Not Null,
+  PRIMARY KEY(nim)
+);
+
+CREATE OR REPLACE TRIGGER history_mahasiswa 
+    BEFORE UPDATE ON Mahasiswa
+    FOR EACH ROW 
+BEGIN
+    INSERT INTO log_mahasiswa
+    values (
+      :old.nim,
+      :old.nama_mahasiswa,
+      :old.alamat
+      );
+END;
+
+update mahasiswa set alamat = 'jl mercu' where alamat = 'Jl mantan';
+update mahasiswa set alamat = 'jalan mercu' where alamat = 'Jl kasih sayang';
+
+select * from mahasiswa;
+select * from log_mahasiswa;
