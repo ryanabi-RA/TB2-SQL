@@ -15,7 +15,6 @@ Insert into Nilai (nim_mahasiswa, nama, nama_mata_kuliah, kd_dosen, nilai_tugas,
 Insert into Nilai (nim_mahasiswa, nama, nama_mata_kuliah, kd_dosen, nilai_tugas, nilai_uts, nilai_uas, nilai_akhir) values (41520010019, 'Ryan Abi Nugraha', 'PL/SQL', 02, 93, 83, 81, 97);
 Insert into Nilai (nim_mahasiswa, nama, nama_mata_kuliah, kd_dosen, nilai_tugas, nilai_uts, nilai_uas, nilai_akhir) values (41520010014, 'Surya Hardiantara Putra', 'PL/SQL', 03, 86, 89, 94, 89);
 
-
 Create Table Dosen
 (
 kd_dosen number(8)Not Null,
@@ -29,10 +28,6 @@ PRIMARY KEY(kd_dosen)
 Insert into Dosen (kd_dosen, nama_dosen, alamat, email,fakultas) values (01, 'Muhaimin Hasanudin,S.T,M.Kom', 'Jl mercu', 'muhaimin@gmail.com', 'Ilmu Komputer');
 Insert into Dosen (kd_dosen, nama_dosen, alamat, email,fakultas) values (02, 'Ryan Doctor,S.T,M.Kom', 'Jl mercu', 'ryandoctor@gmail.com', 'Ilmu Komputer'); 
 Insert into Dosen (kd_dosen, nama_dosen, alamat, email,fakultas) values (03, 'Ryan Santoso,S.T,M.Kom', 'Jl mercu', 'ryanSantoso@gmail.com', 'Ilmu Komputer'); 
-
-
-
-
 
 Create Table Mata_Kuliah
 (
