@@ -97,7 +97,7 @@ INNER JOIN Mata_Kuliah
 INNER JOIN nilai 
   on nilai.nim_mahasiswa = Mahasiswa.nim;
 
---view tabel
+--View Tabel ----------------------
 CREATE VIEW Jadwal_kuliah AS
 SELECT
   mhs.nama_mahasiswa,
@@ -139,7 +139,8 @@ and mk.kd_mata_kuliah=kls.kd_mata_kuliah;
 
 SELECT * FROM absensi;
 
---trigger
+--Trigger -------------------
+
 Create Table log_mahasiswa(
   nim number(11) Not Null,
   nama_mahasiswa varchar(40) Not Null,
@@ -164,3 +165,18 @@ update mahasiswa set alamat = 'jalan mercu' where alamat = 'Jl kasih sayang';
 
 select * from mahasiswa;
 select * from log_mahasiswa;
+
+--Procedure ------------------------
+
+create or replace NONEDITIONABLE procedure Procedure_Mahasiswa
+is
+begin
+	for row in(select * from Mahasiswa)
+	loop
+        Dbms_output.put_line(row.nama_mahasiswa || '-' || row.nim);
+	End Loop;
+End;
+
+set serverout on;
+
+execute Procedure_Mahasiswa();
