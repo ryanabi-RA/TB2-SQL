@@ -14,6 +14,13 @@ PRIMARY KEY(nim_mahasiswa)
 Insert into Nilai (nim_mahasiswa, nama, nama_mata_kuliah, kd_dosen, nilai_tugas, nilai_uts, nilai_uas, nilai_akhir) values (41520010001, 'Ahmad Baedhawi', 'PL/SQL', 01, 87, 85, 91, 88);
 Insert into Nilai (nim_mahasiswa, nama, nama_mata_kuliah, kd_dosen, nilai_tugas, nilai_uts, nilai_uas, nilai_akhir) values (41520010019, 'Ryan Abi Nugraha', 'PL/SQL', 02, 93, 83, 81, 97);
 Insert into Nilai (nim_mahasiswa, nama, nama_mata_kuliah, kd_dosen, nilai_tugas, nilai_uts, nilai_uas, nilai_akhir) values (41520010014, 'Surya Hardiantara Putra', 'PL/SQL', 03, 86, 89, 94, 89);
+Insert into Nilai (nim_mahasiswa, nama, nama_mata_kuliah, kd_dosen, nilai_tugas, nilai_uts, nilai_uas, nilai_akhir) values (41520010016, 'Gusnan Zendra Darmawan', 'PL/SQL', 04, 88, 85, 91, 88);
+Insert into Nilai (nim_mahasiswa, nama, nama_mata_kuliah, kd_dosen, nilai_tugas, nilai_uts, nilai_uas, nilai_akhir) values (41520010022, 'Handika Sanjaya', 'PL/SQL', 05, 93, 83, 81, 97);
+Insert into Nilai (nim_mahasiswa, nama, nama_mata_kuliah, kd_dosen, nilai_tugas, nilai_uts, nilai_uas, nilai_akhir) values (41520010078, 'Andhika Prima', 'PL/SQL', 06, 86, 89, 94, 89);
+Insert into Nilai (nim_mahasiswa, nama, nama_mata_kuliah, kd_dosen, nilai_tugas, nilai_uts, nilai_uas, nilai_akhir) values (41520010012, 'Diaz Rama Putra', 'PL/SQL', 07, 87, 85, 91, 88);
+Insert into Nilai (nim_mahasiswa, nama, nama_mata_kuliah, kd_dosen, nilai_tugas, nilai_uts, nilai_uas, nilai_akhir) values (41520010082, 'Ivan Fadhila Nurdiansyah', 'PL/SQL', 08, 93, 83, 81, 97);
+Insert into Nilai (nim_mahasiswa, nama, nama_mata_kuliah, kd_dosen, nilai_tugas, nilai_uts, nilai_uas, nilai_akhir) values (41520010071, 'Bagus Maulana', 'PL/SQL', 09, 86, 80, 91, 89);
+Insert into Nilai (nim_mahasiswa, nama, nama_mata_kuliah, kd_dosen, nilai_tugas, nilai_uts, nilai_uas, nilai_akhir) values (41520010089, 'Maulana Hasan', 'PL/SQL', 10, 86, 89, 94, 89);
 
 Create Table Dosen
 (
@@ -28,6 +35,13 @@ PRIMARY KEY(kd_dosen)
 Insert into Dosen (kd_dosen, nama_dosen, alamat, email,fakultas) values (01, 'Muhaimin Hasanudin,S.T,M.Kom', 'Jl mercu', 'muhaimin@gmail.com', 'Ilmu Komputer');
 Insert into Dosen (kd_dosen, nama_dosen, alamat, email,fakultas) values (02, 'Ryan Doctor,S.T,M.Kom', 'Jl mercu', 'ryandoctor@gmail.com', 'Ilmu Komputer'); 
 Insert into Dosen (kd_dosen, nama_dosen, alamat, email,fakultas) values (03, 'Ryan Santoso,S.T,M.Kom', 'Jl mercu', 'ryanSantoso@gmail.com', 'Ilmu Komputer'); 
+Insert into Dosen (kd_dosen, nama_dosen, alamat, email,fakultas) values (04, 'Andre,S.T,M.Kom', 'Jl mercu', 'andre@gmail.com', 'Ilmu Komputer');
+Insert into Dosen (kd_dosen, nama_dosen, alamat, email,fakultas) values (05, 'Ahmad Aji,S.T,M.Kom', 'Jl mercu', 'ahmadaji@gmail.com', 'Ilmu Komputer');
+Insert into Dosen (kd_dosen, nama_dosen, alamat, email,fakultas) values (06, 'Charles,S.T,M.Kom', 'Jl mercu', 'charles@gmail.com', 'Ilmu Komputer'); 
+Insert into Dosen (kd_dosen, nama_dosen, alamat, email,fakultas) values (07, 'Aditya,S.T,M.Kom', 'Jl mercu', 'aditya@gmail.com', 'Ilmu Komputer'); 
+Insert into Dosen (kd_dosen, nama_dosen, alamat, email,fakultas) values (08, 'Yudo Adi,S.T,M.Kom', 'Jl mercu', 'yudoadi@gmail.com', 'Ilmu Komputer'); 
+Insert into Dosen (kd_dosen, nama_dosen, alamat, email,fakultas) values (09, 'Haris Arman,S.T,M.Kom', 'Jl mercu', 'harisarman@gmail.com', 'Ilmu Komputer'); 
+Insert into Dosen (kd_dosen, nama_dosen, alamat, email,fakultas) values (10, 'Dika Setya,S.T,M.Kom', 'Jl mercu', 'dikasetya@gmail.com', 'Ilmu Komputer'); 
 
 Create Table Mata_Kuliah
 (
@@ -44,6 +58,13 @@ PRIMARY KEY(kd_mata_kuliah)
 Insert into Mata_Kuliah (kd_mata_kuliah,  kd_dosen, nama_mata_kuliah, hari_mata_kuliah, jam_mata_kuliah, prodi, fakultas) values (10, 01, 'SQL', 'Rabu', '13:15', 'IT', 'Ilmu Komputer');
 Insert into Mata_Kuliah (kd_mata_kuliah,  kd_dosen, nama_mata_kuliah, hari_mata_kuliah, jam_mata_kuliah, prodi, fakultas) values (20, 02, 'ALjabar', 'Kamis', '13:15', 'IT', 'Ilmu Komputer');
 Insert into Mata_Kuliah (kd_mata_kuliah,  kd_dosen, nama_mata_kuliah, hari_mata_kuliah, jam_mata_kuliah, prodi, fakultas) values (30, 03, 'KWH', 'Jumat', '13:15', 'IT', 'Ilmu Komputer');
+Insert into Mata_Kuliah (kd_mata_kuliah,  kd_dosen, nama_mata_kuliah, hari_mata_kuliah, jam_mata_kuliah, prodi, fakultas) values (40, 04, 'Algoritma', 'Rabu', '14:15', 'IT', 'Ilmu Komputer');
+Insert into Mata_Kuliah (kd_mata_kuliah,  kd_dosen, nama_mata_kuliah, hari_mata_kuliah, jam_mata_kuliah, prodi, fakultas) values (50, 05, 'Sistem Operasi', 'Kamis', '14:15', 'IT', 'Ilmu Komputer');
+Insert into Mata_Kuliah (kd_mata_kuliah,  kd_dosen, nama_mata_kuliah, hari_mata_kuliah, jam_mata_kuliah, prodi, fakultas) values (60, 06, 'Data Science', 'Jumat', '14:15', 'IT', 'Ilmu Komputer');
+Insert into Mata_Kuliah (kd_mata_kuliah,  kd_dosen, nama_mata_kuliah, hari_mata_kuliah, jam_mata_kuliah, prodi, fakultas) values (70, 07, 'Kecerdasan Buatan', 'Rabu', '07:15', 'IT', 'Ilmu Komputer');
+Insert into Mata_Kuliah (kd_mata_kuliah,  kd_dosen, nama_mata_kuliah, hari_mata_kuliah, jam_mata_kuliah, prodi, fakultas) values (80, 08, 'Perangkat Lunak', 'Kamis', '07:15', 'IT', 'Ilmu Komputer');
+Insert into Mata_Kuliah (kd_mata_kuliah,  kd_dosen, nama_mata_kuliah, hari_mata_kuliah, jam_mata_kuliah, prodi, fakultas) values (90, 09, 'Web Programming', 'Jumat', '07:15', 'IT', 'Ilmu Komputer');
+Insert into Mata_Kuliah (kd_mata_kuliah,  kd_dosen, nama_mata_kuliah, hari_mata_kuliah, jam_mata_kuliah, prodi, fakultas) values (100, 10, 'English For Computer', 'Rabu', '10:15', 'IT', 'Ilmu Komputer');
 
 Create Table Mahasiswa
 (
@@ -60,6 +81,14 @@ PRIMARY KEY(nim)
 Insert into Mahasiswa (nim, nama_mahasiswa, gender, alamat, email, prodi, fakultas) values (41520010001, 'Ahmad Baedhawi', 'L', 'Jl Kasih Sayang', 'ahmad@gmail.com', 'IT', 'Ilmu Komputer');
 Insert into Mahasiswa (nim, nama_mahasiswa, gender, alamat, email, prodi, fakultas) values (41520010019, 'Ryan Abi Nugraha', 'L', 'Jl Mantan', 'ryan1@gmail.com', 'IT', 'Ilmu Komputer');
 Insert into Mahasiswa (nim, nama_mahasiswa, gender, alamat, email, prodi, fakultas) values (41520010014, 'Surya Hardiantara Putra', 'L', 'Jl Kenangan', 'surya@gmail.com', 'IT', 'Ilmu Komputer');
+Insert into Mahasiswa (nim, nama_mahasiswa, gender, alamat, email, prodi, fakultas) values (41520010016, 'Gusnan Zendra Darmawan', 'L', 'Jl Kasih', 'gusnan@gmail.com', 'IT', 'Ilmu Komputer');
+Insert into Mahasiswa (nim, nama_mahasiswa, gender, alamat, email, prodi, fakultas) values (41520010022, 'Handika Sanjaya', 'L', 'Jl Sayang', 'handika@gmail.com', 'IT', 'Ilmu Komputer');
+Insert into Mahasiswa (nim, nama_mahasiswa, gender, alamat, email, prodi, fakultas) values (41520010078, 'Andhika Prima', 'L', 'Jl Sayang Mantan', 'andhika@gmail.com', 'IT', 'Ilmu Komputer');
+Insert into Mahasiswa (nim, nama_mahasiswa, gender, alamat, email, prodi, fakultas) values (41520010012, 'Diaz Rama Putra', 'L', 'Jl Meruya', 'diaz@gmail.com', 'IT', 'Ilmu Komputer');
+Insert into Mahasiswa (nim, nama_mahasiswa, gender, alamat, email, prodi, fakultas) values (41520010082, 'Ivan Fadhila Nurdiansyah', 'L', 'Jl Pasar Minggu', 'ivan@gmail.com', 'IT', 'Ilmu Komputer');
+Insert into Mahasiswa (nim, nama_mahasiswa, gender, alamat, email, prodi, fakultas) values (41520010071, 'Bagus Maulana', 'L', 'Jl Mangga', 'bagus@gmail.com', 'IT', 'Ilmu Komputer');
+Insert into Mahasiswa (nim, nama_mahasiswa, gender, alamat, email, prodi, fakultas) values (41520010089, 'Maulana Hasan', 'L', 'Jl Jeruk', 'hasan@gmail.com', 'IT', 'Ilmu Komputer');
+Insert into Mahasiswa (nim, nama_mahasiswa, gender, alamat, email, prodi, fakultas) values (41520010091, 'Ragil', 'L', 'Jl Jeruk', 'ragil@gmail.com', 'IT', 'Ilmu Komputer');
 
 Create Table Kelas
 (
@@ -70,9 +99,17 @@ kd_mata_kuliah number(6) Not Null,
 PRIMARY KEY(kd_kelas)
 );
 
-Insert into Kelas (data_nim, kd_kelas, kd_dosen, kd_mata_kuliah) values (41520010001, '6', 01, 10);
+Insert into Kelas (data_nim, kd_kelas, kd_dosen, kd_mata_kuliah) values (41520010001, 'a', 01, 10);
 Insert into Kelas (data_nim, kd_kelas, kd_dosen, kd_mata_kuliah) values (41520010019, '7', 02, 20);
-Insert into Kelas (data_nim, kd_kelas, kd_dosen, kd_mata_kuliah) values (41520010001, '8', 03, 30);
+Insert into Kelas (data_nim, kd_kelas, kd_dosen, kd_mata_kuliah) values (41520010014, '8', 03, 30);
+Insert into Kelas (data_nim, kd_kelas, kd_dosen, kd_mata_kuliah) values (41520010016, '9', 04, 40);
+Insert into Kelas (data_nim, kd_kelas, kd_dosen, kd_mata_kuliah) values (41520010022, '10', 05, 50);
+Insert into Kelas (data_nim, kd_kelas, kd_dosen, kd_mata_kuliah) values (41520010078, '11', 06, 60);
+Insert into Kelas (data_nim, kd_kelas, kd_dosen, kd_mata_kuliah) values (41520010012, '12', 07, 70);
+Insert into Kelas (data_nim, kd_kelas, kd_dosen, kd_mata_kuliah) values (41520010082, '13', 08, 80);
+Insert into Kelas (data_nim, kd_kelas, kd_dosen, kd_mata_kuliah) values (41520010071, '14', 09, 90);
+Insert into Kelas (data_nim, kd_kelas, kd_dosen, kd_mata_kuliah) values (41520010089, '15', 10, 100);
+Insert into Kelas (data_nim, kd_kelas, kd_dosen, kd_mata_kuliah) values (41520010091, '16', 10, 100);
 
 --join tabel
 SELECT
