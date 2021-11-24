@@ -144,7 +144,11 @@ SELECT * FROM absensi;
 Create Table log_mahasiswa(
   nim number(11) Not Null,
   nama_mahasiswa varchar(40) Not Null,
+  gender varchar(1) Not Null,
   alamat varchar(50) Not Null,
+  email varchar(40) Not Null,
+  prodi varchar(50) Not Null,
+  fakultas varchar(50) Not Null,
   PRIMARY KEY(nim)
 );
 
@@ -156,7 +160,11 @@ BEGIN
     values (
       :old.nim,
       :old.nama_mahasiswa,
-      :old.alamat
+      :old.gender,
+      :old.alamat,
+      :old.email,
+      :old.prodi,
+      :old.fakultas
       );
 END;
 
