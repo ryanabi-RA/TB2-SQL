@@ -225,3 +225,69 @@ End;
 set serverout on;
 
 execute Procedure_Mahasiswa();
+
+--Package 
+--sintak sudah bisa digunakan, fungsi select from otomatis sedang ditambahkan
+
+CREATE OR REPLACE PACKAGE add_mhs AS 
+   -- Adds a mahasiswa 
+   PROCEDURE
+      addMahasiswa(
+         mhs_nim mahasiswa.nim%type,
+         mhs_name mahasiswa.nama_mahasiswa%type,
+         mhs_gender mahasiswa.gender%type,
+         mhs_addr mahasiswa.alamat%type,
+         mhs_email mahasiswa.email%type,
+         mhs_prodi mahasiswa.prodi%type,
+         mhs_fakultas mahasiswa.fakultas%type
+      );
+   
+   -- Removes a mahasiswa 
+   PROCEDURE delMahasiswa(mhs_nim mahasiswa.nim%TYPE); 
+  
+END;
+/
+
+CREATE OR REPLACE PACKAGE BODY add_mhs AS 
+   PROCEDURE 
+      addMahasiswa(
+         mhs_nim mahasiswa.nim%type,
+         mhs_name mahasiswa.nama_mahasiswa%type,
+         mhs_gender mahasiswa.gender%type,
+         mhs_addr mahasiswa.alamat%type,
+         mhs_email mahasiswa.email%type,
+         mhs_prodi mahasiswa.prodi%type,
+         mhs_fakultas mahasiswa.fakultas%type
+      )
+   IS 
+   BEGIN 
+      INSERT INTO mahasiswa (nim,nama_mahasiswa,gender,alamat,email,prodi,fakultas) 
+         VALUES(mhs_nim, mhs_name, mhs_gender, mhs_addr, mhs_email, mhs_prodi, mhs_fakultas); 
+   END addMahasiswa; 
+   
+   PROCEDURE delMahasiswa(mhs_nim mahasiswa.nim%type) IS 
+   BEGIN 
+      DELETE FROM mahasiswa 
+      WHERE nim = mhs_nim; 
+   END delMahasiswa;  
+   
+   PROCEDURE listMahasiswa IS
+    BEGIN 
+        SELECT 
+            nim,
+            nama,
+            alamat
+        FROM customers;
+    END listMahasiswa;
+END;
+/
+DECLARE 
+   code mahasiswa.nim%type:= 41520010091;--delete ragil
+BEGIN 
+   add_mhs.addMahasiswa(41520020000,'Putin','L','Rusia','putin@gmail.com','TI','Ilmu Komputer'); 
+   add_mhs.addMahasiswa(41520020001,'Biden','L','USA','Biden@gmail.com','TI','Ilmu Komputer'); 
+   add_mhs.addMahasiswa(41520020002,'Xi Jinping','L','China','Jinping@gmail.com','TI','Ilmu Komputer');
+   add_mhs.delMahasiswa(code);
+END; 
+/
+SELECT * FROM mahasiswa;
