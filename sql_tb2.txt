@@ -269,16 +269,8 @@ CREATE OR REPLACE PACKAGE BODY add_mhs AS
    BEGIN 
       DELETE FROM mahasiswa 
       WHERE nim = mhs_nim; 
-   END delMahasiswa;  
+   END delMahasiswa;
    
-   PROCEDURE listMahasiswa IS
-    BEGIN 
-        SELECT 
-            nim,
-            nama,
-            alamat
-        FROM customers;
-    END listMahasiswa;
 END;
 /
 DECLARE 
